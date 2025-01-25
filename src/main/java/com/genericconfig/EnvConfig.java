@@ -14,6 +14,6 @@ public class EnvConfig {
 	public static String appUrl= "https://www.ebay.com";
 	public static String jsonFileType;
 	public static String usernameTextbox;
-	public static String browser= "headless";
+	public static String browser= "chrome";
 	public static String xtrass;
 }

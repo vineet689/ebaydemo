@@ -33,6 +33,7 @@ public class CartPage {
 	    public int getCartItemCount() {
 	        MainMethods.waitForElementClickable(driver, cartIcon, 30);
 	        driver.findElement(cartIcon).click();
+	        MainMethods.waitForElementClickable(driver, cartIcon, 60);
 	        String cartItemCount = driver.findElement(By.xpath("//span[@class='badge']")).getText();
 	        return Integer.parseInt(cartItemCount);
 	    }

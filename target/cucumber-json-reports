@@ -1,0 +1,150 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2025-01-25T04:36:02.313Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4089585600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.setup(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 293400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.before(Scenario)"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "Verify item can be added to Cart",
+        "description": "",
+        "id": "checkout-functionality;verify-item-can-be-added-to-cart",
+        "after": [
+          {
+            "result": {
+              "duration": 506119100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ApplicationBooks.quit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8637000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Open browser",
+            "match": {
+              "location": "AddToCartSteps.open_browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 739238300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Navigate to ebay.com",
+            "match": {
+              "location": "AddToCartSteps.navigate_to_ebay_com()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5290374400,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Search for \"book\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"book\"",
+                  "offset": 11
+                }
+              ],
+              "location": "AddToCartSteps.search_for_book(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 287347000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Click on the first book in the list",
+            "match": {
+              "location": "AddToCartSteps.click_on_the_first_book()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 36169880600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "In the item listing page, click on \u0027Add to cart\u0027",
+            "match": {
+              "location": "AddToCartSteps.click_on_add_to_cart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15090787300,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Verify the cart has been updated and displays the number of items",
+            "match": {
+              "location": "AddToCartSteps.verify_cart_updated()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@tag1"
+          },
+          {
+            "name": "@checkoute2eflow"
+          },
+          {
+            "name": "@sanity"
+          },
+          {
+            "name": "@addtocartscenario"
+          },
+          {
+            "name": "@task"
+          }
+        ]
+      }
+    ],
+    "name": "Checkout functionality",
+    "description": "",
+    "id": "checkout-functionality",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/ShopingCartScenarios.feature",
+    "tags": []
+  }
+]

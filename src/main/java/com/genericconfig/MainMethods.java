@@ -33,6 +33,9 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import io.cucumber.core.api.Scenario;
@@ -43,6 +46,7 @@ public class MainMethods {
 	static Actions action;
 	private WebDriver driver= null;
 	public static Map<String, Object>pref;
+	public static String projectRoot = System.getProperty("user.dir");
 	
 	
 	public static boolean waitForElementClickable(WebDriver driver, By locator, int time) {
@@ -57,12 +61,16 @@ public class MainMethods {
 	
 	
 	public static WebDriver launchWebDriver(Scenario scenario, WebDriver driver) throws IOException, MalformedURLException {
+	    Path chromeDriverPath = Paths.get(projectRoot, "src", "main", "resources", "chrome", "chromedriver.exe");
+	    String finalPath= chromeDriverPath.toString();
+		System.out.println("Path of driver: " +finalPath);
+		
 		try {
 			if(EnvConfig.browser.equalsIgnoreCase("chrome")) {
-				System.setProperty("webdriver.chrome.driver","src\\main\\resources\\chrome\\chromedriver.exe");  
+				System.setProperty("webdriver.chrome.driver", finalPath);  
 		        ChromeOptions Option = new ChromeOptions();
 		        Map<String, Object> prefs= new HashMap<String, Object>();
-		        prefs.put("download.default_directory",  System.getProperty("user.dir")+ File.separator + "externalFiles" + File.separator + "downloadFiles");
+		        prefs.put("download.default_directory",  System.getProperty(projectRoot)+ File.separator + "externalFiles" + File.separator + "downloadFiles");
 		        Option.addArguments("--test-type");
 		        Option.addArguments("start-maximized");
 		        Option.addArguments("disable-extensions");
